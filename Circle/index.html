@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle</title>
+</head>
+<style>
+    canvas{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <canvas id="myCanvas" ></canvas>
+    <script>
+        class Circle{
+            constructor(x,y,radius,color) {
+                this.x = x;
+                this.y = y;
+                this.radius =radius;
+                this.color =color;
+            }
+            render() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y,this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle =this.color;
+                ctx.fill();
+                ctx.stroke()
+            }
+        }
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        c.height =300;
+        let cirk1 = new Circle (10,10,100,'#000000');
+        let cirk2 = new Circle (290,10,100,'red');
+        let cirk3 = new Circle (10,290,100,'yellow');
+        let cirk4 = new Circle (290,290,100,'blue');
+        cirk1.render();
+        cirk2.render();
+        cirk3.render();
+        cirk4.render();
+       
+    </script>
+</body>
+</html>
